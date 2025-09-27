@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John & Ruby Wedding - Netflix Series</title>
+    <title>Rafi & Ameng Wedding - Netflix Series</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -65,12 +68,46 @@
     <div class="container">
         <!-- Cover Section -->
         <section id="home" class="cover-section">
-            <div class="netflix-logo">NETFLIX</div>
+            <div class="netflix-logo">Wedding Story</div>
             <div class="series-badge">Original Series</div>
-            <h1 class="couple-names">John & Ruby</h1>
+            <!-- <h1 class="couple-names">Rafi & Ameng</h1> -->
+            <!-- Bride & Groom Profiles -->
+            <div class="profiles-container">
+                <div class="profile-card">
+                    <div class="profile-avatar groom">
+                        <div class="profile-face">
+                            <div class="profile-eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="profile-smile"></div>
+                        </div>
+                    </div>
+                    <div class="profile-name">Rafi</div>
+                    <div class="profile-role">Groom</div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar bride">
+                        <div class="profile-face">
+                            <div class="profile-eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="profile-smile"></div>
+                            <div class="profile-eyelashes">
+                                <div class="eyelash left"></div>
+                                <div class="eyelash right"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-name">Ameng</div>
+                    <div class="profile-role">Bride</div>
+                </div>
+            </div>
             <p style="color: var(--netflix-gray); margin: 10px 0;">A Wedding Story</p>
+            <p>To: Bpk/Ibu/Saudara</p>
             <div class="guest-name">
-                <p>To: Bpk/Ibu/Saudara</p>
                 <p id="guest-name-display">Nama Tamu</p>
             </div>
             <a href="#main" class="play-button">
@@ -78,15 +115,46 @@
                 <span>Play</span>
             </a>
         </section>
+        <!-- Header Section -->
+        <section id="header" class="header-section">
+            <div class="header-overlay">
+                <div class="netflix-brand">The Wedding</div>
+                <div class="header-content">
+                    <h1 class="series-title">Rafi & Ameng:</h1>
+                    <h2 class="series-subtitle">Sebelum Hari H</h2>
+                    <div class="countdown-container">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <div class="event-date">
+                        <p class="date-label">Wedding Date</p>
+                        <p class="date-value"> 25 December 2025</p>
+                        <p class="time-value">10:00 AM</p>
 
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Main Content -->
         <section id="main" class="main-section">
             <h2 class="section-title">Coming Soon</h2>
-            <p style="color: var(--netflix-gray); margin-bottom: 30px;">Sabtu, 24 Agustus 2025</p>
-
             <div class="episode-card fade-in">
                 <div class="episode-thumbnail">
-                    <span>Episode 1</span>
+                    <img src="img/cover.jpg" alt="Episode 1" class="episode-image">
                 </div>
                 <div class="episode-info">
                     <h3 class="episode-title">The Beginning</h3>
@@ -104,7 +172,7 @@
                     <span>Mempelai Pria</span>
                 </div>
                 <div class="episode-info">
-                    <h3 class="episode-title">John</h3>
+                    <h3 class="episode-title">Rafi</h3>
                     <p class="episode-description">Putra Pertama dari keluarga Bpk. X & Ibu Y</p>
                     <a href="instagram.com/john" class="map-button" style="margin-top: 10px;">@mempelaipria</a>
                 </div>
@@ -114,7 +182,7 @@
                     <span>Mempelai Wanita</span>
                 </div>
                 <div class="episode-info">
-                    <h3 class="episode-title">Ruby</h3>
+                    <h3 class="episode-title">Ameng</h3>
                     <p class="episode-description">Putri Pertama dari keluarga Bpk. A & Ibu B</p>
                     <a href="instagram.com/ruby" class="map-button" style="margin-top: 10px;">@mempelaiwanita</a>
                 </div>
@@ -234,14 +302,14 @@
             <div class="bank-card fade-in">
                 <p class="bank-name">Bank Mandiri</p>
                 <p class="account-number">60010448581</p>
-                <p style="color: var(--netflix-light-gray);">a.n. John</p>
+                <p style="color: var(--netflix-light-gray);">a.n. Rafi</p>
                 <button class="copy-button" onclick="copyToClipboard('60010448581')">Copy</button>
             </div>
 
             <div class="bank-card fade-in">
                 <p class="bank-name">Bank BCA</p>
                 <p class="account-number">7635063050</p>
-                <p style="color: var(--netflix-light-gray);">a.n. Ruby</p>
+                <p style="color: var(--netflix-light-gray);">a.n. Ameng</p>
                 <button class="copy-button" onclick="copyToClipboard('7635063050')">Copy</button>
             </div>
         </section>
@@ -250,7 +318,7 @@
         <footer class="footer">
             <div class="footer-logo">NETFLIX</div>
             <div class="thank-you">
-                <p style="margin-bottom: 10px;"><strong>Peter & Merry</strong></p>
+                <p style="margin-bottom: 10px;"><strong>Rafi & Ameng</strong></p>
                 <p>Atas Kehadiran Dan Doa Restunya</p>
                 <p>Kami Ucapkan Terimakasih</p>
                 <p style="margin-top: 20px; color: var(--netflix-gray); font-size: 0.8rem;">Created with ❤️ for your

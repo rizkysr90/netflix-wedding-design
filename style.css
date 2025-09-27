@@ -44,12 +44,137 @@ body {
 }
 
 .netflix-logo {
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 3.5rem;
     font-weight: bold;
     color: var(--netflix-red);
-    letter-spacing: -2px;
+    letter-spacing: 4px;
     margin-bottom: 20px;
     text-transform: uppercase;
+}
+
+/* Bride & Groom Profiles */
+.profiles-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    transition: border 0.2s ease;
+    position: relative;
+}
+
+.profile-avatar.groom {
+    background-color: #1f4e79;
+    /* Navy blue for groom */
+}
+
+.profile-avatar.bride {
+    background-color: #d63384;
+    /* Pink for bride */
+}
+
+.profile-card:hover .profile-avatar {
+    border: 2px solid white;
+}
+
+.profile-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-eyes {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.eye {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.profile-smile {
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 12px;
+    border: 2px solid white;
+    border-top: none;
+    border-radius: 0 0 24px 24px;
+}
+
+.profile-eyelashes {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.eyelash {
+    width: 1px;
+    height: 4px;
+    background-color: white;
+}
+
+.eyelash.left {
+    transform: rotate(-15deg);
+}
+
+.eyelash.right {
+    transform: rotate(15deg);
+}
+
+.profile-name {
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 2px;
+    transition: color 0.2s ease;
+}
+
+.profile-role {
+    font-size: 0.75rem;
+    color: var(--netflix-gray);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-card:hover .profile-name {
+    color: var(--netflix-red);
 }
 
 .series-badge {
@@ -111,8 +236,202 @@ body {
     border-bottom: 8px solid transparent;
 }
 
+/* Header Section */
+.header-section {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+        url('img/cover.jpg');
+    /* Replace with your actual image path */
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 60% 45%;
+    /* Focus on center of image */
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.95));
+    padding: 60px 20px 40px;
+    color: white;
+}
+
+.netflix-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--netflix-red);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.header-content {
+    max-width: 400px;
+}
+
+.series-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.series-subtitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: white;
+}
+
+.countdown-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(229, 9, 20, 0.9);
+    padding: 12px 8px;
+    border-radius: 6px;
+    min-width: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    font-family: 'Arial', sans-serif;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Event Date Styling */
+.event-date {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.date-label {
+    font-size: 0.9rem;
+    color: var(--netflix-gray, #999);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 5px 0;
+    font-weight: 500;
+}
+
+.date-value {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.time-value {
+    font-size: 1.1rem;
+    color: var(--netflix-red, #e50914);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Main Section */
 /* Main Section */
 .main-section {
+    background: var(--netflix-black);
+    padding: 40px 20px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.episode-card {
+    background: var(--netflix-dark);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: scale(1.02);
+}
+
+.episode-thumbnail {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #333, #111);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--netflix-gray);
+    overflow: hidden;
+}
+
+/* Image styling to work with your existing thumbnail container */
+.episode-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.episode-info {
+    padding: 15px;
+}
+
+.episode-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.episode-description {
+    color: var(--netflix-light-gray);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* .main-section {
     background: var(--netflix-black);
     padding: 40px 20px;
 }
@@ -160,7 +479,7 @@ body {
     color: var(--netflix-light-gray);
     font-size: 0.9rem;
     line-height: 1.4;
-}
+} */
 
 /* Event Details */
 .event-section {
@@ -404,6 +723,18 @@ body {
 
 .fade-in {
     animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Navigation Menu */
@@ -674,6 +1005,8 @@ html {
 }
 
 @media (max-width: 480px) {
+
+    /* Audio Player */
     .volume-control {
         display: none;
     }
@@ -681,5 +1014,98 @@ html {
     .audio-player {
         width: calc(100% - 20px);
         padding: 10px;
+    }
+
+    /* Bride & Groom Profiles */
+    .profiles-container {
+        gap: 20px;
+    }
+
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Header Section */
+    .netflix-brand {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .series-title,
+    .series-subtitle {
+        font-size: 2rem;
+    }
+
+    .header-overlay {
+        padding: 40px 15px 30px;
+    }
+
+    .countdown-container {
+        gap: 10px;
+    }
+
+    .countdown-item {
+        min-width: 50px;
+        padding: 10px 6px;
+    }
+
+    .countdown-number {
+        font-size: 1.4rem;
+    }
+
+    .countdown-label {
+        font-size: 0.6rem;
+    }
+
+    .event-date {
+        margin-top: 15px;
+        padding: 12px 15px;
+    }
+
+    .date-label {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .date-value {
+        font-size: 1.1rem;
+    }
+
+    .time-value {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .series-title,
+    .series-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .countdown-container {
+        gap: 8px;
+    }
+
+    .countdown-item {
+        min-width: 45px;
+        padding: 8px 4px;
+    }
+
+    .countdown-number {
+        font-size: 1.2rem;
+    }
+
+    .event-date {
+        padding: 10px 12px;
+    }
+
+    .date-value {
+        font-size: 1rem;
+    }
+
+    .time-value {
+        font-size: 0.9rem;
     }
 }

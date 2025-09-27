@@ -131,7 +131,7 @@ function formatTime(seconds) {
 // Auto-play when user clicks the main play button
 document.querySelector('.play-button').addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('#main').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#header').scrollIntoView({ behavior: 'smooth' });
 
     // Show audio player and start playing
     setTimeout(() => {
@@ -231,3 +231,39 @@ document.addEventListener('visibilitychange', () => {
         updatePlayPauseIcon();
     }
 });
+
+// Set the wedding date and time (YYYY, MM-1, DD, HH, MM, SS)
+// Note: Month is 0-indexed (0 = January, 11 = December)
+const weddingDate = new Date(2025, 11, 25, 10, 0, 0); // December 25, 2025, 10:00 AM
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate.getTime() - now;
+
+    // Calculate time units
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Update the display
+    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+    // If countdown is finished
+    if (distance < 0) {
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+
+        // Optional: Show a message when countdown reaches zero
+        // document.querySelector('.countdown-container').innerHTML = '<div style="color: #e50914; font-size: 1.5rem; font-weight: bold;">The Big Day is Here! 🎉</div>';
+    }
+}
+
+// Update countdown every second
+updateCountdown(); // Run once immediately
+setInterval(updateCountdown, 1000);
