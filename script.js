@@ -11,6 +11,48 @@ const CONFIG = {
     // Optional: Change audio file URL
     audioURL: 'Westlife - Beautiful in white (Lyrics).mp3'
 };
+// Bottom Navigation Visibility Control
+function handleBottomNavVisibility() {
+    const bottomNav = document.querySelector('.bottom-nav');
+    const coverSection = document.getElementById('home');
+
+    if (!bottomNav || !coverSection) return;
+
+    // Get the height of the cover section
+    const coverHeight = coverSection.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    // Show navigation when user scrolls past the cover section
+    if (scrollPosition > coverHeight - 100) { // 100px buffer for smoother transition
+        bottomNav.classList.add('show');
+    } else {
+        bottomNav.classList.remove('show');
+    }
+}
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Hide navigation initially
+    const bottomNav = document.querySelector('.bottom-nav');
+    if (bottomNav) {
+        bottomNav.classList.remove('show');
+    }
+
+    // Set up scroll listener
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleBottomNavVisibility();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initial check
+    handleBottomNavVisibility();
+});
 // Get guest name from URL parameter
 const urlParams = new URLSearchParams(window.location.search);
 const guestName = urlParams.get('to') || urlParams.get('nama') || 'Tamu Undangan';
@@ -145,8 +187,33 @@ document.querySelector('.play-button').addEventListener('click', (e) => {
 });
 
 // Smooth scroll with active navigation
-const navItems = document.querySelectorAll('.nav-item');
-const sections = document.querySelectorAll('section[id]');
+document.addEventListener('DOMContentLoaded', () => {
+    // Existing smooth scroll with active navigation - UPDATE THIS SECTION
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+        // Handle navigation visibility
+        handleBottomNavVisibility();
+
+        // Handle active nav item
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === '#' + current) {
+                item.classList.add('active');
+            }
+        });
+    });
+});
 
 window.addEventListener('scroll', () => {
     let current = '';

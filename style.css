@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: var(--netflix-dark);
     color: var(--netflix-white);
     overflow-x: hidden;
@@ -48,8 +48,7 @@ body {
     font-size: 3.5rem;
     font-weight: bold;
     color: var(--netflix-red);
-    letter-spacing: 4px;
-    margin-bottom: 20px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -242,7 +241,7 @@ body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
         url('img/cover.jpg');
     /* Replace with your actual image path */
-    background-size: 70%;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: 60% 45%;
     /* Focus on center of image */
@@ -319,7 +318,6 @@ body {
     font-weight: 700;
     color: white;
     line-height: 1;
-    font-family: 'Arial', sans-serif;
 }
 
 .countdown-label {
@@ -742,7 +740,7 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(100%);
     width: 100%;
     max-width: 430px;
     background: rgba(20, 20, 20, 0.98);
@@ -752,6 +750,12 @@ body {
     padding: 10px 0;
     z-index: 1000;
     border-top: 1px solid #333;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Show navigation when not on cover */
+.bottom-nav.show {
+    transform: translateX(-50%) translateY(0);
 }
 
 .nav-item {
