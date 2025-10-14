@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafi & Ameng Wedding - Netflix Series</title>
+    <title>Rafi & Amel Wedding - Netflix Series</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,9 +71,16 @@
     <div class="container">
         <!-- Cover Section -->
         <section id="home" class="cover-section">
+            <!-- Video Background -->
+            <video id="coverVideo" class="cover-video" autoplay muted loop playsinline>
+                <source src="./videos/Cover.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Video Overlay -->
+            <div class="video-overlay"></div>
             <div class="netflix-logo">The Wedding</div>
             <div class="series-badge">Original Series</div>
-            <!-- <h1 class="couple-names">Rafi & Ameng</h1> -->
+            <!-- <h1 class="couple-names">Rafi & Amel</h1> -->
             <!-- Bride & Groom Profiles -->
             <div class="profiles-container">
                 <div class="profile-card">
@@ -104,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="profile-name">Ameng</div>
+                    <div class="profile-name">Amel</div>
                     <div class="profile-role">Bride</div>
                 </div>
             </div>
@@ -118,12 +125,13 @@
                 <span>Play</span>
             </a>
         </section>
+
         <!-- Header Section -->
         <section id="header" class="header-section">
             <div class="header-overlay">
                 <div class="netflix-brand">The Wedding</div>
                 <div class="header-content">
-                    <h1 class="series-title">Rafi & Ameng:</h1>
+                    <h1 class="series-title">Rafi & Amel:</h1>
                     <h2 class="series-subtitle">Sebelum Hari H</h2>
                     <div class="countdown-container">
                         <div class="countdown-item">
@@ -185,7 +193,7 @@
                     <span>Mempelai Wanita</span>
                 </div>
                 <div class="episode-info">
-                    <h3 class="episode-title">Ameng</h3>
+                    <h3 class="episode-title">Amel</h3>
                     <p class="episode-description">Putri Pertama dari keluarga Bpk. A & Ibu B</p>
                     <a href="instagram.com/ruby" class="map-button" style="margin-top: 10px;">@mempelaiwanita</a>
                 </div>
@@ -312,7 +320,7 @@
             <div class="bank-card fade-in">
                 <p class="bank-name">Bank BCA</p>
                 <p class="account-number">7635063050</p>
-                <p style="color: var(--netflix-light-gray);">a.n. Ameng</p>
+                <p style="color: var(--netflix-light-gray);">a.n. Amel</p>
                 <button class="copy-button" onclick="copyToClipboard('7635063050')">Copy</button>
             </div>
         </section>
@@ -321,7 +329,7 @@
         <footer class="footer">
             <div class="footer-logo">NETFLIX</div>
             <div class="thank-you">
-                <p style="margin-bottom: 10px;"><strong>Rafi & Ameng</strong></p>
+                <p style="margin-bottom: 10px;"><strong>Rafi & Amel</strong></p>
                 <p>Atas Kehadiran Dan Doa Restunya</p>
                 <p>Kami Ucapkan Terimakasih</p>
                 <p style="margin-top: 20px; color: var(--netflix-gray); font-size: 0.8rem;">Created with ❤️ for your

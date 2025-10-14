@@ -31,16 +31,68 @@ body {
 /* Cover Section */
 .cover-section {
     height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23141414"/></svg>');
-    background-size: cover;
-    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     position: relative;
+    overflow: hidden;
+}
+
+/* Video Background */
+.cover-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    object-fit: cover;
+}
+
+/* Video Overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+    z-index: -1;
+}
+
+/* Mobile optimization for video */
+@media (max-width: 768px) {
+    .cover-video {
+        /* On mobile, ensure video covers the full area */
+        min-width: 100vw;
+        min-height: 100vh;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .cover-section {
+        /* Ensure proper mobile layout */
+        min-height: 100vh;
+        min-height: 100dvh;
+        /* Dynamic viewport height for mobile browsers */
+    }
+}
+
+/* Video loading state */
+.cover-video:not([src]) {
+    display: none;
+}
+
+/* Ensure content is above video */
+.cover-section>*:not(.cover-video):not(.video-overlay) {
+    position: relative;
+    z-index: 1;
 }
 
 .netflix-logo {
