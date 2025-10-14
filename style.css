@@ -482,6 +482,38 @@ body {
     left: 0;
 }
 
+/* Custom styling for groom photo */
+.groom-photo {
+    object-fit: cover;
+    object-position: center center;
+    /* You can adjust this: center, top, bottom, left, right, or specific percentages like "center 30%" */
+    /* Additional positioning options you can uncomment and adjust: */
+    object-position: center 40%;
+    /* Focus on upper portion */
+    /* object-position: center 80%; */
+    /* Focus on lower portion */
+    /* object-position: 30% center; */
+    /* Focus on left side */
+    /* object-position: 70% center; */
+    /* Focus on right side */
+}
+
+/* Custom styling for bride photo */
+.bride-photo {
+    object-fit: cover;
+    object-position: center center;
+    /* You can adjust this: center, top, bottom, left, right, or specific percentages like "center 30%" */
+    /* Additional positioning options you can uncomment and adjust: */
+    object-position: center 20%;
+    /* Focus on upper portion */
+    /* object-position: center 80%; */
+    /* Focus on lower portion */
+    /* object-position: 30% center; */
+    /* Focus on left side */
+    /* object-position: 70% center; */
+    /* Focus on right side */
+}
+
 .episode-info {
     padding: 15px;
 }
@@ -555,6 +587,23 @@ body {
     padding: 30px 20px;
     margin: 20px 0;
     border-radius: 8px;
+}
+
+/* Event Image Container */
+.event-image-container {
+    width: 100%;
+    height: 200px;
+    margin: 15px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .event-badge {
