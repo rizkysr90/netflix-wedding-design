@@ -654,47 +654,126 @@ body {
 /* Love Story Timeline */
 .timeline {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .timeline-item {
     display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 0;
     position: relative;
 }
 
-.timeline-number {
-    min-width: 50px;
-    height: 50px;
-    background: var(--netflix-red);
-    border-radius: 50%;
+.timeline-item-header {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.timeline-photo {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.timeline-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Timeline photo positioning options */
+.timeline-image.position-top {
+    object-position: center top;
+}
+
+.timeline-image.position-bottom {
+    object-position: center bottom;
+}
+
+.timeline-image.position-left {
+    object-position: left center;
+}
+
+.timeline-image.position-right {
+    object-position: right center;
+}
+
+.timeline-image.position-top-left {
+    object-position: left top;
+}
+
+.timeline-image.position-top-right {
+    object-position: right top;
+}
+
+.timeline-image.position-bottom-left {
+    object-position: left bottom;
+}
+
+.timeline-image.position-bottom-right {
+    object-position: right bottom;
+}
+
+/* Custom positioning with percentages */
+.timeline-image.position-custom-1 {
+    object-position: center 20%;
+}
+
+.timeline-image.position-custom-2 {
+    object-position: center 30%;
+}
+
+.timeline-image.position-custom-3 {
+    object-position: center 70%;
+}
+
+.timeline-image.position-custom-4 {
+    object-position: center 80%;
 }
 
 .timeline-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.timeline-year {
-    color: var(--netflix-gray);
-    font-size: 0.9rem;
+.timeline-content-header {
+    display: flex;
+    align-items: center;
     margin-bottom: 5px;
 }
 
-.timeline-title {
-    font-size: 1.2rem;
+.timeline-episode {
+    color: var(--netflix-white);
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin: 0;
+}
+
+
+.timeline-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--netflix-white);
 }
 
 .timeline-description {
     color: var(--netflix-light-gray);
     font-size: 0.9rem;
     line-height: 1.5;
+    margin: 0;
 }
 
 /* Gallery */
@@ -1149,6 +1228,51 @@ html {
         height: 70px;
     }
 
+    /* Timeline responsive adjustments */
+    .timeline {
+        padding: 15px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .timeline-item-header {
+        flex-direction: row;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .timeline-photo {
+        width: 80px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+
+    .timeline-content {
+        flex: 1;
+        text-align: left;
+    }
+
+    .timeline-content-header {
+        gap: 5px;
+    }
+
+    .timeline-episode {
+        font-size: 0.8rem;
+    }
+
+
+    .timeline-title {
+        font-size: 0.9rem;
+    }
+
+    .timeline-description {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
     /* Header Section */
     .netflix-brand {
         font-size: 1.5rem;
@@ -1229,6 +1353,48 @@ html {
     }
 
     .time-value {
+        font-size: 0.9rem;
+    }
+}
+
+/* Medium screen responsive timeline */
+@media (min-width: 481px) and (max-width: 767px) {
+    .timeline-photo {
+        width: 100px;
+        height: 70px;
+    }
+
+    .timeline-episode {
+        font-size: 0.9rem;
+    }
+
+
+    .timeline-title {
+        font-size: 1rem;
+    }
+
+    .timeline-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Large screen responsive timeline */
+@media (min-width: 768px) {
+    .timeline-photo {
+        width: 120px;
+        height: 80px;
+    }
+
+    .timeline-episode {
+        font-size: 1rem;
+    }
+
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+
+    .timeline-description {
         font-size: 0.9rem;
     }
 }
