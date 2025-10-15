@@ -797,6 +797,13 @@ body {
     font-size: 0.8rem;
 }
 
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 /* RSVP Section */
 .rsvp-section {
     padding: 30px 20px;
