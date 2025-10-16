@@ -245,34 +245,37 @@ document.querySelectorAll('.fade-in').forEach(el => {
 });
 
 // Form submission via WhatsApp
-document.querySelector('.rsvp-form').addEventListener('submit', (e) => {
-    e.preventDefault();
+const rsvpForm = document.querySelector('.rsvp-form');
+if (rsvpForm) {
+    rsvpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    // Get form values
-    const name = document.getElementById('guestName').value;
-    const message = document.getElementById('guestMessage').value;
-    const attendance = document.getElementById('attendance').value;
+        // Get form values
+        const name = document.getElementById('guestName').value;
+        const message = document.getElementById('guestMessage').value;
+        const attendance = document.getElementById('attendance').value;
 
-    // Format message for WhatsApp
-    const waMessage = `*RSVP Wedding ${CONFIG.groomName} & ${CONFIG.brideName}*%0A%0A` +
-        `*Nama:* ${name}%0A` +
-        `*Kehadiran:* ${attendance}%0A` +
-        `*Ucapan:* ${message}%0A%0A` +
-        `_Sent from Netflix Wedding Invitation_`;
+        // Format message for WhatsApp
+        const waMessage = `*RSVP Wedding ${CONFIG.groomName} & ${CONFIG.brideName}*%0A%0A` +
+            `*Nama:* ${name}%0A` +
+            `*Kehadiran:* ${attendance}%0A` +
+            `*Ucapan:* ${message}%0A%0A` +
+            `_Sent from Netflix Wedding Invitation_`;
 
-    // Create WhatsApp URL
-    const whatsappURL = `https://wa.me/${CONFIG.whatsappNumber}?text=${waMessage}`;
+        // Create WhatsApp URL
+        const whatsappURL = `https://wa.me/${CONFIG.whatsappNumber}?text=${waMessage}`;
 
-    // Open WhatsApp in new tab
-    window.open(whatsappURL, '_blank');
+        // Open WhatsApp in new tab
+        window.open(whatsappURL, '_blank');
 
-    // Optional: Reset form after sending
-    setTimeout(() => {
-        if (confirm('Apakah pesan sudah terkirim via WhatsApp?')) {
-            e.target.reset();
-        }
-    }, 1000);
-});
+        // Optional: Reset form after sending
+        setTimeout(() => {
+            if (confirm('Apakah pesan sudah terkirim via WhatsApp?')) {
+                e.target.reset();
+            }
+        }, 1000);
+    });
+}
 // Handle visibility change to pause audio when tab is inactive
 document.addEventListener('visibilitychange', () => {
     if (document.hidden && !audio.paused) {
