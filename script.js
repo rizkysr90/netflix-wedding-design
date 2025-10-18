@@ -9,7 +9,7 @@ const CONFIG = {
     groomName: 'John',
 
     // Optional: Change audio file URL
-    audioURL: 'Westlife - Beautiful in white (Lyrics).mp3'
+    audioURL: 'Hindia - everything u are Lirik Lagu.mp3'
 };
 // Bottom Navigation Visibility Control
 function handleBottomNavVisibility() {
