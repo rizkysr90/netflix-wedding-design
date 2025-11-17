@@ -286,7 +286,7 @@ document.addEventListener('visibilitychange', () => {
 
 // Set the wedding date and time (YYYY, MM-1, DD, HH, MM, SS)
 // Note: Month is 0-indexed (0 = January, 11 = December)
-const weddingDate = new Date(2025, 11, 25, 10, 0, 0); // December 25, 2025, 10:00 AM
+const weddingDate = new Date(2025, 11, 6, 9, 0, 0); // December 6, 2025, 10:00 AM
 
 function updateCountdown() {
     const now = new Date().getTime();
